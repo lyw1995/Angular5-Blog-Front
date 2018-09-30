@@ -1,0 +1,59 @@
+
+<div class="artlist-container">
+  <!--<svg class="icon" aria-hidden="true" style="width:120px;height:73px">-->
+  <!--<use xlink:href="#monkey"></use>-->
+  <!--</svg>-->
+  <div class="sort_container mat-elevation-z6">
+    <span>排序:</span>
+    <a ngClass="{{ds?'sort-selected':'sort-normal'}}" mat-button (click)="defaultSort()">默认</a>
+    <a ngClass="{{cs?'sort-selected':'sort-normal'}}"  mat-button (click)="sortByCreate_time()">按更新时间</a>
+    <a ngClass="{{vs?'sort-selected':'sort-normal'}}"  mat-button (click)="sortByViews()">按阅读量</a>
+    <!--<button class="search-btn" mat-icon-button [matMenuTriggerFor]="appMenu">-->
+      <!--<mat-icon>search</mat-icon>-->
+    <!--</button>-->
+  </div>
+  <!--<mat-menu #appMenu="matMenu">-->
+    <!--<form mat-menu-item disabled>-->
+      <!--<mat-form-field>-->
+        <!--<input matInput placeholder="搜博主文章" value="">-->
+      <!--</mat-form-field>-->
+    <!--</form>-->
+  <!--</mat-menu>-->
+  <mat-card class="card-list-item" *ngFor="let item of userArticles">
+    <div class="card-list-item-container" [routerLink]="['/article/detail/'+item['aid']]">
+      <img src="{{item['cover'] == ''?'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1380883836,2142364445&fm=27&gp=0.jpg':item['cover']}}">
+      <div>
+        <a><span class="article-type"
+                 ngClass="{{item.origin == 1?'type-1':'type-2'}}">
+          {{item.origin == 1?"原":"转"}}</span>
+          <span class="article-title">{{item.title}}</span></a>
+        <p class="article-subtitle" >
+          {{item['content'] | cust_html}}
+        </p>
+        <p class="article-bottom">
+          <span>{{item['create_time'] | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+          <a class="views-count">
+            <mat-icon class="mb-3" role="img">remove_red_eye</mat-icon>
+            {{item['views']}}</a>
+          <a class="views-count">
+            <mat-icon role="img">textsms</mat-icon>
+            0</a>
+        </p>
+      </div>
+    </div>
+  </mat-card>
+
+  <div class="sort_container mat-elevation-z6">
+    <div class="sort_container-center" *ngIf="totalCount != -1">
+      <mat-paginator [length]="totalCount" [pageSize]="10" [(pageIndex)]="pageIndex" (page)="change($event)" >
+      </mat-paginator>
+      <!--<button mat-button disabled>上一页</button>-->
+      <!--<a mat-icon-button>1</a>-->
+      <!--<a mat-icon-button>2</a>-->
+      <!--<a mat-icon-button>3</a>-->
+      <!--<span>...</span>-->
+      <!--<a mat-icon-button>22</a>-->
+      <!--<button mat-button>下一页</button>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<mat-sidenav-container class="sidenv-container">
+  <mat-sidenav class="sidenav-drawer-container"
+               [mode]="'over'"
+               *ngIf="this.mobileQuery.matches"
+               [fixedInViewport]="mobileQuery.matches" fixedTopGap="92">
+    <app-side-nav-drawer (titleEmitter)="getTitle($event)" ></app-side-nav-drawer>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="sidenav-content-container">
+      <div class="sidenav-content-header-container">
+        <button class="sidenav_toggle" (click)="toggle()" mat-button>
+          <mat-icon role="img" class="mat-menu-item-highlighted">menu</mat-icon>
+        </button>
+        <h1>{{title}}</h1>
+      </div>
+      <div class="sidenav-content-inner-container">
+        <div class="sidenav-content-inner-body">
+          <app-side-nav-drawer (titleEmitter)="getTitle($event)"  *ngIf="!this.mobileQuery.matches"></app-side-nav-drawer>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

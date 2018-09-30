@@ -1,0 +1,50 @@
+.about-container {
+  margin: 20px;
+  vertical-align: top;
+  padding: 10px;
+}
+
+/*TODO 共用头样式*/
+.sidenav-content-header-container {
+  display: flex;
+  align-items: center;
+  background: #3f51b5;
+  padding-left: 20px;
+}
+
+.sidenav-content-header-container h1 {
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0;
+  padding: 20px 8px;
+  outline: none;
+  color: #fff;
+}
+
+/*TODO 共用icon样式*/
+.views-count mat-icon {
+  vertical-align: middle;
+}
+
+.mb-3 {
+  margin-bottom: 2px;
+}
+.soical-link{
+  display: inline-block;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.soical-link img{
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+.soical-link p{
+  font-size: 13px;
+  color: #666666;
+  margin: 0px !important;
+}
+.soical-link:hover > p{
+  color: red;
+}

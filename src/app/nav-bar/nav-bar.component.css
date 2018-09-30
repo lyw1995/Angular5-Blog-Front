@@ -1,0 +1,71 @@
+
+/*头部内容*/
+.app-navbar-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 8px 16px;
+}
+
+.app-navbar-link-small, app-navbar-link {
+  display: none;
+}
+
+.app-navbar, .app-navbar-header, .app-navbar-link, .app-navbar-link-small {
+  background: #3f51b5;
+}
+
+/*适配移动端*/
+@media (max-width: 720px) {
+  .app-navbar-link {
+    display: flex;
+  }
+  .app-navbar-link-small {
+    display: block;
+    display: flex;
+  }
+
+  .app-navbar-link-small-hide {
+    display: none;
+  }
+
+  .app-navbar-git_label-hide {
+    display: none;
+  }
+  .app-blog{
+    top: 92px;
+  }
+}
+/* 链接标签 样式 */
+.app-navbar-link a{
+  color: white;
+  flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+/*头像 样式*/
+.app-navbar-avator {
+  height: 40px;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+  border-radius: 40px;
+}
+
+.app-navbar-header a {
+  color: white;
+}
+
+/*占位容器样式*/
+.flex-spacer {
+  flex: 1;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+/*git 图标样式*/
+.app-navbar-git_icon {
+  height: 26px;
+  margin: 0 4px 3px 0;
+  vertical-align: middle;
+}

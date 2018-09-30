@@ -1,0 +1,24 @@
+<div class="detail-container mat-elevation-z6" *ngIf="contentData">
+  <div>
+    <a><span class="article-type"
+             ngClass="{{contentData['origin'] == 1?'type-1':'type-2'}}">
+          {{contentData['origin'] == 1?"原":"转"}}</span>
+      <span class="article-title">{{contentData['title']}}</span></a>
+    <p class="article-bottom">
+      <span>发表时间: {{contentData['create_time'] | date: 'yyyy-MM-dd HH:mm:ss'}}</span>
+      <span class="article-bottom-right">
+         <a class="views-count">
+        <mat-icon class="mb-3" role="img">remove_red_eye</mat-icon>
+        {{contentData['views']}}</a>
+      <a class="views-count">
+        <mat-icon role="img">textsms</mat-icon>
+        0</a>
+      </span>
+    </p>
+  </div>
+  <hr>
+  <div class="detail-css">
+    <div class="htmledit_views" [innerHtml]="contentData['content'] | safehtml"></div>
+  </div>
+</div>
+

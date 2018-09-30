@@ -1,0 +1,54 @@
+<div class="sidenav-drawer">
+  <div class="sidenav-drawer-content">
+    <mat-card class="cart-list-item" *ngIf="isShowProfile&&profileData">
+      <p class="account-info-label">个人资料</p>
+      <p class="account-info-desc">{{profileData['user_desc']}}</p>
+      <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile class="mat-grid-tile-sub">文章</mat-grid-tile>
+        <mat-grid-tile class="mat-grid-tile-sub">阅读</mat-grid-tile>
+        <mat-grid-tile class="mat-grid-tile-sub">访客</mat-grid-tile>
+      </mat-grid-list>
+      <mat-grid-list cols="3" rowHeight="3:1">
+        <mat-grid-tile>{{profileData['articles_count']}}</mat-grid-tile>
+        <mat-grid-tile>{{profileData['total_pv']}}</mat-grid-tile>
+        <mat-grid-tile>{{profileData['total_ip_count']}}</mat-grid-tile>
+      </mat-grid-list>
+    </mat-card>
+    <mat-card class="cart-list-item" *ngIf="isShowProfile && profileData">
+      <p class="account-info-label">{{profileData['category_list'][0]['label']}}</p>
+      <ul *ngIf="profileData['category_list'][0]['categorys']">
+        <li *ngFor="let item of profileData['category_list'][0]['categorys']">
+          <a [routerLink]="['./category/',item['cid']]" (click)="pushTitle(item['cname'])">{{item['cname']}}<span>{{item['size']}}篇</span></a>
+        </li>
+      </ul>
+    </mat-card>
+
+    <mat-card class="cart-list-item" *ngIf="isShowProfile  && profileData">
+      <p class="account-info-label">{{profileData['category_list'][1]['label']}}</p>
+      <ul *ngIf="profileData['category_list'][1]['categorys']">
+        <li *ngFor="let item of profileData['category_list'][1]['categorys']">
+          <a [routerLink]="['./category/',item['cid']]" (click)="pushTitle(item['cname'])">{{item['cname']}}<span>{{item['size']}}篇</span></a>
+        </li>
+      </ul>
+    </mat-card>
+
+    <mat-card class="cart-list-item" *ngIf="!isShowProfile && howAndNewArticles">
+      <p class="account-info-label">最新文章</p>
+      <ul *ngIf="howAndNewArticles['new_articles']">
+        <li *ngFor="let item of howAndNewArticles['new_articles']" (click)="closeSlide()">
+          <a [routerLink]="['./detail/',item['aid']]">{{item['title']}}</a>
+          <p class="list-item-bottom">发表时间: {{item['create_time']  | date: 'yyyy-MM-dd HH:mm:ss'}}</p>
+        </li>
+      </ul>
+    </mat-card>
+    <mat-card class="cart-list-item" *ngIf="!isShowProfile && howAndNewArticles">
+      <p class="account-info-label">热门文章</p>
+      <ul *ngIf="howAndNewArticles['hot_articles']">
+        <li *ngFor="let item of howAndNewArticles['hot_articles']" (click)="closeSlide()">
+          <a [routerLink]="['./detail/',item['aid']]">{{item['title']}}</a>
+          <p class="list-item-bottom">阅读量: {{item['views']}}</p>
+        </li>
+      </ul>
+    </mat-card>
+  </div>
+</div>

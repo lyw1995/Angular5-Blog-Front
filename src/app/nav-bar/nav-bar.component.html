@@ -1,0 +1,37 @@
+<nav class="app-navbar-header">
+  <a mat-button [routerLink]="['/']" >
+    <img class="app-navbar-avator" src="{{avator}}">
+    <span>{{title}}</span>
+  </a>
+  <a class="app-navbar-link-small-hide" [routerLink]="['/article']" mat-button>
+    文章列表
+  </a>
+  <!--[routerLink]="['/recommend']"-->
+  <a class="app-navbar-link-small-hide" [routerLink]="['/recommend/detail/']" mat-button>
+    热文推荐
+  </a>
+  <a class="app-navbar-link-small-hide" [routerLink]="['/about']"  mat-button>
+    关于我
+  </a>
+
+  <div class="flex-spacer"></div>
+
+  <a mat-button>
+    <img class="app-navbar-git_icon"
+         src="https://v5.material.angular.io/assets/img/homepage/github-circle-white-transparent.svg">
+    <span class="app-navbar-git_label-hide">GitHub</span>
+  </a>
+
+</nav>
+<nav class="app-navbar-link app-navbar-link-small">
+  <a [routerLink]="['/article']"  mat-button>
+    文章列表
+  </a>
+  <!--[routerLink]="['/recommend']"-->
+  <a [routerLink]="['/recommend/detail/']"  mat-button>
+    热文推荐
+  </a>
+  <a [routerLink]="['/about']"  mat-button>
+    关于我
+  </a>
+</nav>

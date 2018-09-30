@@ -1,0 +1,40 @@
+<div>
+  <div class="sidenav-content-header-container">
+    <h1>关于我</h1>
+  </div>
+  <mat-card class="about-container" *ngIf="userData">
+    <mat-list>
+      <h3 mat-subheader>个人简介</h3>
+      <mat-list-item>
+        <!--<p>你今天必须做别人不愿做的事，好让你明天可以拥有别人不能拥有的东西。</p>-->
+        <p>{{userData['user_desc']}}</p>
+      </mat-list-item>
+      <mat-divider></mat-divider>
+      <mat-list-item>
+        <a class="views-count" mat-line>
+          <mat-icon class="mb-3" role="img">supervisor_account</mat-icon>
+          {{userData['nick_name']}}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="views-count" mat-line>
+          <mat-icon class="mb-3" role="img">email</mat-icon>
+          {{userData['user_email']}}</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a class="views-count" mat-line>
+          <mat-icon class="mb-3" role="img">location_on</mat-icon>
+          {{userData['user_addr']}}</a>
+      </mat-list-item>
+    </mat-list>
+  </mat-card>
+  <mat-card class="about-container" *ngIf="userLinks">
+    <mat-list>
+      <h3 mat-subheader>友情链接</h3>
+      <mat-divider></mat-divider>
+      <a class="soical-link" target="_blank" href="{{item['link_url']}}" *ngFor="let item of userLinks">
+        <img src="{{item['link_icon']}}">
+        <p>{{item['link_name']}}</p>
+      </a>
+    </mat-list>
+  </mat-card>
+</div>

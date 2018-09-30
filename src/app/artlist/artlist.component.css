@@ -1,0 +1,167 @@
+
+.card-list-item {
+  margin: 20px;
+  vertical-align: top;
+  padding: 10px;
+}
+
+.article-type {
+  margin-right: 8px;
+  margin-top: 0;
+  vertical-align: 2px;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.article-title {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.article-subtitle {
+  max-width: 83vw;
+  margin: 0 !important;
+  color: #999 !important;
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.article-title:hover {
+  color: red;
+}
+
+.type-2 {
+  color: #86ca5e;
+  border: 1px solid #e7f4df;
+}
+
+.type-1 {
+  color: #ca0c16;
+  border: 1px solid #f4ced0;
+}
+
+.card-list-item a {
+  width: 54vw;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  color: #333;
+  box-sizing: inherit;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-list-item-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-list-item-container img {
+  width: 125px;
+  height: 100px;
+  vertical-align: middle;
+  margin: auto 0;
+}
+
+.card-list-item-container div {
+  flex: 1;
+  box-sizing: content-box;
+  margin-left: 8px;
+}
+
+.article-bottom {
+  margin: 0px !important;
+  color: #b4b4b4;
+  font-size: 13px;
+  padding-top: 5px;
+}
+
+.article-bottom a {
+  display: inline;
+  color: #b4b4b4;
+  cursor: pointer;
+}
+
+.article-bottom a:hover {
+  transition: .1s ease-in;
+  -webkit-transition: .1s ease-in;
+  color: #666;
+}
+
+.views-count {
+  margin-left: 10px;
+}
+
+.views-count mat-icon {
+  vertical-align: middle;
+  transform: scale(0.7);
+}
+
+.mb-3 {
+  margin-bottom: 2px;
+}
+
+.sort_container {
+  background: #fff;
+  margin: 20px;
+  font-size: 14px;
+  padding-left: 10px;
+}
+
+.sort-normal, mat-form-field {
+  color: #333333;
+}
+
+.sort-selected {
+  color: red;
+}
+
+.sort_container a:hover {
+  color: red;
+}
+
+.search-btn {
+  float: right;
+}
+
+.sort_container-center {
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@media (max-width: 720px) {
+  .card-list-item-container img {
+    display: none;
+  }
+
+  .card-list-item-container div {
+    margin-left: 0px;
+  }
+
+  .card-list-item a {
+    width: 83vw;
+  }
+  .sort_container .mat-button{
+    min-width: 44px ;
+    padding: 0 8px ;
+  }
+  .search-btn {
+    min-width: 24px;
+    padding: 0px !important;
+  }
+}
+

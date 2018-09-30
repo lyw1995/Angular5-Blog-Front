@@ -1,0 +1,129 @@
+.detail-container {
+  margin: 20px;
+  vertical-align: top;
+  padding: 10px;
+}
+
+/*TODO 与文章列表 共用样式可以抽取*/
+.article-type {
+  margin-right: 8px;
+  margin-top: 0;
+  vertical-align: 2px;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.article-title {
+  color: black;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.article-title:hover {
+  color: red;
+}
+
+.type-2 {
+  color: #86ca5e;
+  border: 1px solid #e7f4df;
+}
+
+.type-1 {
+  color: #ca0c16;
+  border: 1px solid #f4ced0;
+}
+
+.article-bottom {
+  margin: 0px !important;
+  color: #666;
+  font-size: 13px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.article-bottom-right {
+  text-align: right;
+  flex: 1;
+  flex-grow: 1;
+}
+
+.article-bottom a {
+  display: inline;
+  color: #666;
+}
+
+.views-count {
+  margin-left: 10px;
+}
+
+.views-count mat-icon {
+  vertical-align: middle;
+  transform: scale(0.7);
+}
+
+.mb-3 {
+  margin-bottom: 2px;
+}
+
+.content-bottom-container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.content-bottom-container a {
+  flex: 1;
+  flex-grow: 1;
+  display: inline-block;
+  color: #666;
+  cursor: pointer;
+  font-size: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.content-bottom-container a span {
+  min-width: 60px;
+  line-height: 26px;
+  padding: 5px 10px;
+  border: 1px solid #b4b4b4;
+  margin-right: 8px;
+  background: #fafafa;
+  color: #666666;
+}
+
+.content-bottom-container a:hover {
+  color: red;
+}
+
+.content-bottom-container a:hover > span {
+  color: red;
+  border: 1px solid red;
+}
+
+.detail-css {
+  max-width: 75vw;
+  overflow-x: hidden;
+}
+
+@media (max-width: 720px) {
+  .content-bottom-container {
+    display: block;
+    max-width: 83vw;
+  }
+
+  .detail-css {
+    max-width: 83vw;
+    overflow-x: hidden;
+  }
+}
+
